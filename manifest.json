@@ -1,0 +1,38 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 2,
+    "version": "2.0.0",
+    "name": "SCV Hackday Project",
+    "description": "Meet Chat Notifications",
+    "author": "SmolBren",
+    "permissions": ["notifications","declarativeContent","storage"],
+    "icons": {
+      "16": "icon16.png",
+      "24": "icon24.png",
+      "36": "icon36.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "browser_action": {
+      "default_icon": {
+        "15": "icon16.png",
+        "24": "icon24.png",
+        "36": "icon36.png",
+        "48": "icon48.png"
+      },
+   	 "default_title": "Meet Chat Notification",
+        "default_popup": "index.html"
+    },
+    "default_locale": "en",
+    "background": {
+        "scripts" : ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["https://meet.google.com/*"],
+          "js": ["content.js"]
+        }
+      ]
+    }
