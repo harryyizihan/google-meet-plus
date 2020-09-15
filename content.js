@@ -211,7 +211,7 @@ function configOpenedChatObserver() {
             senderName = messageElement.parentElement.parentNode.dataset.senderName
             message_text = messageElement.innerText
           }
-          debugger;
+          //debugger;
           showNotification(senderName, message_text);
         }
       }

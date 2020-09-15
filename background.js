@@ -24,13 +24,24 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       console.log("id : " + tabs[0].id);
       console.log("index : " + tabs[0].index);
 
-      chrome.tabs.executeScript(tabs[0].id, {
-        code: 'var message_object = "' + message_object + '";'
-      }, function() {
+      
+      chrome.storage.local.set({
+        message_object: message_object
+      }, function () {
         chrome.tabs.executeScript(tabs[0].id, {
-          code: 'console.log(message_object);'
+          //code: 'console.log(message_object);'
+          file: "test.js"
         });
       });
+
+      // chrome.tabs.executeScript(tabs[0].id, {
+      //   code: 'var message_object = ' + JSON.stringify(message_object)
+      // }, function() {
+      //   chrome.tabs.executeScript(tabs[0].id, {
+      //     //code: 'console.log(message_object);'
+      //     file: "test.js"
+      //   });
+      // });
     });
 
     sendResponse(true);

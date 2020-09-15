@@ -29,7 +29,7 @@
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhSWLCCr8quZzQ1QozY2xWGqRdFxngITH/yAtRFJcatNALA2bdNtZ8Ief/Jkf3LqiRa051UkmwvI+POVIDrXXygTvTWBz5Wo5hdhuAfPuQnA5P8kKxaq7v68VUxMYxNDFIM4S/ZT97rhnRoA9nqUi6U0oxFulQ7DJThsEvu7PXCKqUPv87JTmyP1YbTLdj6RAn7upBlaWmuZeTVJvnxtletPd7e6eMSVlwxk8DNyf1E6n39lW4XPMszEKedEJmULeo0PMCVMaVvVUnPRfa0bxhYci8+jP5pYiREv0/Q9s4n8lt6s9SdXBVRzwQox5sovxGT0Wsj5jzzZ8tc6KYbWFawIDAQAB",
   "manifest_version": 2,
   "name": "Meet Chat Notifications",
-  "permissions": [ "notifications", "tabs", "http://*/*", "https://*/*" ],
+  "permissions": [ "notifications", "tabs", "http://*/*", "https://*/*", "storage" ],
   "update_url": "https://clients2.google.com/service/update2/crx",
   "version": "2.0.0"
 }
