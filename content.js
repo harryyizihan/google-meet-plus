@@ -269,4 +269,10 @@ function showNotification(sender, message) {
     type: "notification",
     opt: opt
   }, function () { });
+
+  console.log("Now send message to bg");
+  chrome.runtime.sendMessage({
+    type: "danmu",
+    opt: opt
+  }, function () { });
 }
