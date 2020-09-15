@@ -30,7 +30,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       }, function () {
         chrome.tabs.executeScript(tabs[0].id, {
           //code: 'console.log(message_object);'
-          file: "test.js"
+          file: "danmu_execute.js"
         });
       });
 
