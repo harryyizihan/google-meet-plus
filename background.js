@@ -7,6 +7,36 @@ function getNotificationId() {
   return id.toString();
 }
 
+//Create danmu in current tab
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+
+  if(request.type == "danmu"){
+    var message_object = {
+      sender: request.opt.title,
+      message: request.opt.message
+    }
+    //danmus.push(message_object)
+
+    console.log("current danmu is from " + message_object.sender + " : " + message_object.message);
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      console.log("this is in query tab");
+      console.log("id : " + tabs[0].id);
+      console.log("index : " + tabs[0].index);
+
+      chrome.tabs.executeScript(tabs[0].id, {
+        code: 'var message_object = "' + message_object + '";'
+      }, function() {
+        chrome.tabs.executeScript(tabs[0].id, {
+          code: 'console.log(message_object);'
+        });
+      });
+    });
+
+    sendResponse(true);
+  }
+});
+
 
 //Create notification
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
