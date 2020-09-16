@@ -466,18 +466,21 @@ function setDanmu(message_object) {
     if (document.getElementById('danmuarea') === null) {
         // init div tags
         var danmu_area_div = document.createElement('div');
+		document.body.appendChild(danmu_area_div);
         danmu_area_div.setAttribute("id", "danmuarea");
-        danmu_area_div.style.position = 'absolute';
-        danmu_area_div.style.background = 'grey';
-        danmu_area_div.style.width = '1024px';
+        danmu_area_div.style.position = 'fixed';
+        // danmu_area_div.style.background = 'grey';
+        danmu_area_div.style.width = '1600px';
         danmu_area_div.style.height = '100px';
-        danmu_area_div.style.marginLeft = 'auto';
-        danmu_area_div.style.marginRight = 'auto';
-        danmu_area_div.style.opacity = '1';
+        // danmu_area_div.style.marginLeft = 'auto';
+        // danmu_area_div.style.marginRight = 'auto';
+        // danmu_area_div.style.opacity = '1';
+		danmu_area_div.style.left = "0px";
+		danmu_area_div.style.top = "0px";
         danmu_area_div.style.zIndex = '2147483646';
         danmu_area_div.innerHTML = '<div id="danmu" style="opacity: 1.0;"></div>';
 
-        document.body.appendChild(danmu_area_div);
+        
 
         console.log('create new div');
     }
@@ -492,7 +495,7 @@ function setDanmu(message_object) {
             top: 0,
             height: "100%",
             width: "100%",
-            speed: 20000,
+            speed: 40000,
             opacity: 1,
             font_size_small: 16,
             font_size_big: 24,
